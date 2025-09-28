@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Minesweeper Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-board { 
+            display: grid; 
+            grid-template-columns: repeat(9, 40px);
+            gap: 2px;
+            margin: 20px 0;
+        }
+        .test-cell { 
+            width: 40px; 
+            height: 40px; 
+            border: 1px solid #ccc; 
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minesweeper Test</h1>
+    <p>If you can see a 9x9 grid below, the basic HTML/CSS is working:</p>
+    <div id="testBoard" class="test-board"></div>
+    
+    <script>
+        console.log('Test script starting...');
+        const testBoard = document.getElementById('testBoard');
+        
+        // Create a simple 9x9 grid
+        for (let i = 0; i < 81; i++) {
+            const cell = document.createElement('div');
+            cell.className = 'test-cell';
+            cell.textContent = i + 1;
+            testBoard.appendChild(cell);
+        }
+        console.log('Test grid created!');
+        
+        // Test if the main game files exist
+        fetch('script.js')
+            .then(() => console.log('script.js exists'))
+            .catch(() => console.log('script.js NOT FOUND'));
+            
+        fetch('style.css')
+            .then(() => console.log('style.css exists'))
+            .catch(() => console.log('style.css NOT FOUND'));
+    </script>
+</body>
+</html>

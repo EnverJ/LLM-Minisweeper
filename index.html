@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Minesweeper</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">Minesweeper</div>
+      <div class="controls">
+        <div class="preset-group">
+          <span>Presets:</span>
+          <button class="preset" data-rows="9" data-cols="9" data-mines="10">Beginner</button>
+          <button class="preset" data-rows="16" data-cols="16" data-mines="40">Intermediate</button>
+          <button class="preset" data-rows="16" data-cols="30" data-mines="99">Expert</button>
+        </div>
+        <div class="custom-group">
+          <span>Custom:</span>
+          <label>Rows <input id="rowsInput" type="number" min="5" max="40" value="9"></label>
+          <label>Cols <input id="colsInput" type="number" min="5" max="60" value="9"></label>
+          <label>Mines <input id="minesInput" type="number" min="1" value="10"></label>
+          <button id="newGameBtn">New Game</button>
+        </div>
+      </div>
+    </header>
+
+    <section class="statusbar">
+      <div class="counter">
+        Mines: <span id="mineCount">010</span>
+      </div>
+      <button id="faceBtn" title="New Game">🙂</button>
+      <div class="counter">
+        Time: <span id="timer">000</span>
+      </div>
+    </section>
+
+    <main id="board" class="board" aria-label="Minesweeper board" role="grid"></main>
+
+    <footer class="footer">
+      Left-click to reveal. Right-click to flag. First click is always safe.
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
